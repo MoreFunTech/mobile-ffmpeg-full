@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0' # Điều chỉnh target iOS nếu cần
 
-  s.vendored_frameworks = 'Frameworks/*.xcframework', 'Support Files/mobile-ffmpeg-full-xcframeworks/mobile-ffmpeg.xcframework'
+  s.vendored_frameworks = '*.xcframework'
 
-  # Bạn có thể không cần các dòng này nữa vì framework đã bao gồm các thư viện và framework hệ thống cần thiết
+  # Bạn có thể không cần các dòng này nữa
   # s.frameworks       = 'AVFoundation', 'CoreMedia', 'VideoToolbox'
   # s.libraries        = 'bz2', 'z'
 
