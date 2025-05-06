@@ -1,31 +1,29 @@
 Pod::Spec.new do |s|
   s.name             = 'mobile-ffmpeg-full'
-  s.version          = '4.4' # Hãy thay đổi phiên bản này nếu bạn biết
+  s.version          = '4.4' # Giữ nguyên hoặc cập nhật nếu cần
   s.summary          = 'A full-featured mobile FFmpeg library.'
 
   s.description      = <<-DESC
                        This library provides a comprehensive set of FFmpeg functionalities for iOS development.
                        It includes support for various audio and video codecs, formats, and filters.
-                       Please refer to the upstream FFmpeg documentation for detailed information.
+                       This version is distributed as pre-built XCFrameworks.
                        DESC
 
   s.homepage         = 'https://github.com/DatND2/mobile-ffmpeg-full.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'LGPL-3.0', :file => 'LICENSE' } # Kiểm tra lại giấy phép trong repository
   s.author           = { 'Your Name' => 'your.email@example.com' } # Thay đổi thông tin tác giả
-  s.source           = { :path => '.' }
+  s.source           = { :git => 'https://github.com/DatND2/mobile-ffmpeg-full.git', :tag => '4.4' } # Đảm bảo tag này tồn tại
 
-  s.ios.deployment_target = '11.0' # Thay đổi target iOS nếu cần
-  # s.osx.deployment_target = '10.12'
-  # s.watchos.deployment_target = '2.0'
-  # s.tvos.deployment_target = '9.0'
+  s.ios.deployment_target = '11.0' # Điều chỉnh target iOS nếu cần
 
-  s.frameworks       = 'AVFoundation', 'CoreMedia', 'VideoToolbox' # Thêm các framework cần thiết
-  s.libraries        = 'bz2', 'z' # Thêm các thư viện cần thiết
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.vendored_frameworks = 'Frameworks/*.xcframework', 'Support Files/mobile-ffmpeg-full-xcframeworks/mobile-ffmpeg.xcframework'
 
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' } # Có thể cần thiết cho các thư viện C
+  # Bạn có thể không cần các dòng này nữa vì framework đã bao gồm các thư viện và framework hệ thống cần thiết
+  # s.frameworks       = 'AVFoundation', 'CoreMedia', 'VideoToolbox'
+  # s.libraries        = 'bz2', 'z'
 
-  s.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' } # Nếu bạn muốn áp dụng cho target chính
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
+  s.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
 end
