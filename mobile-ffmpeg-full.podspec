@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'mobile-ffmpeg-full'
-  s.version          = '1.0.0' # Hãy thay đổi phiên bản này nếu bạn biết
+  s.version          = '4.4' # Hãy thay đổi phiên bản này nếu bạn biết
   s.summary          = 'A full-featured mobile FFmpeg library.'
 
   s.description      = <<-DESC
