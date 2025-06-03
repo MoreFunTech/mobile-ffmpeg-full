@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
   # Bạn có thể không cần các dòng này nữa
   # s.frameworks       = 'AVFoundation', 'CoreMedia', 'VideoToolbox'
-  # s.libraries        = 'bz2', 'z'
+  s.libraries        = 'bz2', 'z'
 
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   s.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
